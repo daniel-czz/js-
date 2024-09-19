@@ -72,7 +72,7 @@ function getFieldName(input) {
 
 // 事件监听
 form.addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // 阻止表单默认行为-数据提交给服务器，然后刷新或重定向到一个新的页面。
 
     checkRequired([username, email, password, password2]);
     checkLength(username, 3, 15);
