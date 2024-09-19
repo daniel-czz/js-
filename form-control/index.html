@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="./form.scss"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="container">
+
+      <h1>计算机开发者从业表</h1>
+
+      <form id="userForm">
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="realname"> 真实姓名 </label>
+          <input type="text" id="realname" name="realname" placeholder="real name">
+
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="idnumber"> 身份证ID </label>
+          <input type="text" id="idnumber" name="idnumber" placeholder="card id">
+
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="gender"> 性别 </label>
+          <!-- 同样的name 才能形成 单选 -->
+          女 <input type="radio" name="gender" value="female">
+          男 <input type="radio" name="gender" value="male">
+
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="occupation"> 职业 </label>
+    
+          <select name="occupation">
+            <option value="">请选择</option>
+            <option value="frontend">frontend</option>
+            <option value="backend">backend</option>
+            <option value="devops">devops</option>
+            <option value="network">network</option>
+
+          </select>
+
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="learning"> 语言学习 </label>
+    
+          java <input type="checkbox" name="learning" value="java">
+          javascript <input type="checkbox" name="learning" value="javascript">
+          python <input type="checkbox" name="learning" value="python">
+
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <p class="warn"></p>
+
+          <label for="intro"> 自我介绍 </label>
+    
+          <textarea name="intro" id="intro" placeholder="自我介绍"></textarea>
+          
+          <i class="fa fa-check"></i>
+        </div>
+
+        <div class="form-element">
+          <button type="submit" id="submitBtn" disabled>提交信息</button>
+        </div>
+      </form>
+
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
