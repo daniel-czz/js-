@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .result {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button>XHR Request</button>
+    <div class="result"></div>
+    <script>
+    
+
+        function httpReq(){
+            //1. 创建对象 
+            const xhr = new XMLHttpRequest()
+            
+            //2. 初始化 设置请求方法 + url
+            xhr.open('POST', 'http://127.0.0.1:9000/server')
+
+            //请求头 固定写法
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+                    
+            //3. 发送 
+            xhr.send('a=100b=200')
+            //事件绑定 处理服务返回的结果
+            
+            //整个请求 状态会变化 4 次
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status >= 200 && xhr.status < 300){
+                    // 处理结果 行 头 空行 体
+                    console.log(xhr.status); //状态码 200
+                    console.log(xhr.statusText); //状态字符串 OK
+                    console.log(xhr.getAllResponseHeaders()); //所有响应头 content-length: 10 content-type: text/html; charset=utf-8
+                    console.log(xhr.response, typeof xhr.response); //响应体 hello AJAX
+    
+                    document.querySelector('.result').innerHTML = xhr.response
+                }
+            }
+        }
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', httpReq)
+    
+    </script>  
+</body>
+</html>
+
+
+    
